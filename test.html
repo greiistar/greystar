@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="gif1/1.png" type="image/png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      :root {
+        --pixel-size: 3;
+      }
+      body {
+        background: black;
+      }
+      .pixel-art {
+        image-rendering: pixelated;
+      }
+      .Logo {
+        width: calc(100px * var(--pixel-size));
+        height: calc(100px * var(--pixel-size));
+        overflow: hidden;
+      }
+      .Logo_sprites {
+        width: calc(100px * var(--pixel-size));
+        height: calc(2600px * var(--pixel-size));
+        animation: moveSpritesheet 2.5s steps(26) infinite;
+      }
+      .center {
+        display: flex;
+        justify-content: center;
+      }
+      @keyframes moveSpritesheet {
+        from {
+          transform: translate3d(0px, 0px, 0px);
+        }
+        to {
+          transform: translate3d(0px, -100%, 0px);
+        }
+      }
+    </style>
+  </head>
+  <body class="center" style="padding-top:100px">
+    <div class="Logo center">
+      <img
+        class="Logo_sprites pixel-art"
+        src="gif1/fullanimation3.png"
+        alt="logo"
+      />
+    </div>
+  </body>
+</html>
