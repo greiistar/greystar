@@ -11,7 +11,7 @@
     src: url("path/GraublauWeb.otf") format("opentype");
     */
       body {
-        margin: auto;
+        padding-top: 20px;
         background-color: black;
         color: white;
         background-size: cover;
@@ -22,20 +22,30 @@
         font-family: BauhausStd;
         src: url("BauhausStd-Bold.otf") format("opentype");
       }
+      h2 {
+      }
       p {
         font-family: BauhausStd;
         font-size: 22px;
       }
+      .center {
+        display: flex;
+        justify-content: center;
+      }
     </style>
   </head>
   <body>
-    <img src="logospin1.gif" alt="my_logo" width="500" height="500" />
-    <h2>
+    <div class="center">
+      <img src="logospin1.gif" alt="my_logo" width="500" height="500" /
+      style="border: 2px; border-style: solid; border-color: grey;">
+    </div>
+    <h2 class="center">
       Work In Progress
     </h2>
-    <p>
+    <p class="center">
       More content coming soon...
     </p>
+
     <footer></footer>
   </body>
 </html>
