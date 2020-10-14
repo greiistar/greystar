@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>"A" Counter</title>
+  </head>
+  <body>
+    <h2 id="timer">0</h2>
+    <h2 id="timer2">0</h2>
+    <script type="text/javascript">
+      let countL = 0;
+      let count2 = 0;
+      const timer = document.getElementById("timer");
+      const timer2 = document.getElementById("timer2");
+      window.addEventListener("keydown", checkKeyPress, false);
+
+      function checkKeyPress(key) {
+        if (key.keyCode == "37") {
+          countL += 1;
+          timer.textContent = countL;
+        }
+        if (key.keyCode == "38") {
+          count2 += 1;
+          timer2.textContent = count2;
+        }
+      }
+    </script>
+  </body>
+</html>

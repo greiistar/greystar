@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Keypress Test</title>
+    <script>
+      window.addEventListener("keydown", checkKeyPress, false);
+
+      function whileKeyPress(key) {
+        while (key.keyCode == "37") {
+          alert("left");
+        }
+        while (key.keyCode == "38") {
+          alert("up");
+        }
+        while (key.keyCode == "39") {
+          alert("right");
+        }
+        while (key.keyCode == "40") {
+          alert("down");
+        }
+      }
+    </script>
+  </head>
+  <!-- LURD = 37, 38, 39, 40 *-->
+</html>

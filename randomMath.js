@@ -30,7 +30,7 @@ function randomImages(num) {
   for (i = 0; i < list.length; i++) {
     imgend = i + 1;
     str1 = "img" + imgend;
-    str2 = "gif1/" + list[i] + ".png";
+    str2 = "night/" + list[i] + ".png";
     document.getElementById(str1).src = str2;
   }
 }

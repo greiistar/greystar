@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>"A" Counter</title>
+    <style type="text/css">
+      body {
+        background-color: grey;
+        margin: 30px;
+        margin-top: 10px;
+      }
+      #contentContainer {
+        width: 300px;
+        height: 300px;
+        border: 5px black solid;
+        overflow: hidden;
+        backgound-color: white;
+      }
+      #thing {
+        position: relative;
+        left: 0px;
+        top: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="timer">0</h2>
+    <h2 id="timer2">0</h2>
+    <h2 id="timer3">0</h2>
+    <h2 id="timer4">0</h2>
+    <div id="contentContainer">
+      <img id="thing" src="gif1/1.png" height="300" width="300" />
+    </div>
+    <script type="text/javascript">
+      var theThing = document.querySelector("#thing");
+      var requestAnimationFrame =
+        window.requestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.msRequestAnimationFrame;
+      let countL = 0;
+      let countU = 0;
+      let countR = 0;
+      let countD = 0;
+      const timer = document.getElementById("timer");
+      const timer2 = document.getElementById("timer2");
+      const timer3 = document.getElementById("timer3");
+      const timer4 = document.getElementById("timer4");
+      window.addEventListener("keydown", checkKeyPress, false);
+
+      function checkKeyPress(key) {
+        if (key.keyCode == "37") {
+          countL += 1;
+          timer.textContent = "L" + countL;
+        }
+        if (key.keyCode == "38") {
+          countU += 1;
+          timer2.textContent = "U" + countU;
+        }
+        if (key.keyCode == "39") {
+          countR += 1;
+          timer3.textContent = "R" + countR;
+        }
+        if (key.keyCode == "40") {
+          countD += 1;
+          timer4.textContent = "D" + countD;
+        }
+      }
+      let speed = 10;
+      function moveThing() {
+        theThing.style.left = countR * speed + -countL * speed + "px";
+        theThing.style.top = countD * speed + -countU * speed + "px";
+        /* if (Math.abs(currentPos) >= 600) {
+          currentPos = -500;
+        }*/
+
+        requestAnimationFrame(moveThing);
+      }
+      moveThing();
+    </script>
+  </body>
+</html>

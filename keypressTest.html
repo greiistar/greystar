@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Keypress Test</title>
+    <script>
+      const Le = document.getElementById("Le");
+      const Up = document.getElementById("Up");
+      const Ri = document.getElementById("Ri");
+      const Do = document.getElementById("Do");
+      let countL = 0;
+      let countU = 0;
+      let countR = 0;
+      let countD = 0;
+      window.addEventListener("keydown", checkKeyPress, false);
+
+      function checkKeyPress(key) {
+        if (key.keyCode == "65") {
+          countL += 1;
+          Le.textContent = countL;
+        }
+        if (key.keyCode == "38") {
+          countU += 1;
+          Up.textContent = countU;
+        }
+        if (key.keyCode == "39") {
+          countR += 1;
+          Ri.textContent = countR;
+        }
+        if (key.keyCode == "40") {
+          countD += 1;
+          Do.textContent = countD;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2 id="Le">0</h2>
+    <h2 id="Up">0</h2>
+    <h2 id="Ri">0</h2>
+    <h2 id="Do">0</h2>
+  </body>
+  <!-- LURD = 37, 38, 39, 40 *-->
+</html>
