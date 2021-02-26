@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>xyTracker</title>
+  </head>
+  <body>
+    <p id="xyDisplay">000</p>
+    <p id="xyDisplay"></p>
+    <button onclick="addToArray(xyTracker,1,1)">add 11</button>
+    <button onclick="addToArray(xyTracker,2,2)">add 22</button>
+  </body>
+  <script>
+    var xyTracker = [];
+    document.getElementById("xyDisplay").innerHTML = xyTracker;
+    function addToArray(array, x, y) {
+      let temparray = [x, y];
+      array.push(temparray);
+      document.getElementById("xyDisplay").innerHTML = xyTracker;
+    }
+  </script>
+</html>

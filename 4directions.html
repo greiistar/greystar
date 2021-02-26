@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>"Movement"</title>
+    <style type="text/css">
+      img {
+        padding: 0;
+        margin: 0;
+        display: block;
+      }
+      :root {
+        --pixel-size: 9;
+      }
+      body {
+        background-color: grey;
+        margin: 30px;
+        margin-top: 20px;
+      }
+      #contentContainer {
+        width: 50vw;
+        height: 50vh;
+        border: 5px black solid;
+        margin: auto;
+        overflow: hidden;
+        backgound-color: white;
+      }
+      #thing {
+        position: relative;
+        left: 0px;
+        top: 0px;
+      }
+      .floatey {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: calc(4px * var(--pixel-size));
+        height: calc(4px * var(--pixel-size));
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="timer">0</h2>
+    <h2 id="timer2">0</h2>
+    <h2 id="timer3">0</h2>
+    <h2 id="timer4">0</h2>
+    <h2 id="displayX">0</h2>
+    <h2 id="displayY">0</h2>
+    <p id="xyDisplay">000</p>
+    <button onclick="addToArray(xyTracker,coordX,coordY)">
+      add xy to array
+    </button>
+    <div id="contentContainer">
+      <table id="tabletime">
+        <tr id="r1">
+          <td id="r1c-1">a</td>
+          <td id="r1c0">b</td>
+          <td id="r1c1">c</td>
+        </tr>
+        <tr id="r0">
+          <td id="r0c-1">d</td>
+          <td id="r0c1">f</td>
+          <td id="r0c0">e</td>
+        </tr>
+        <tr id="r-1">
+          <td id="r-1c-1">g</td>
+          <td id="r-1c0">h</td>
+          <td id="r-1c1">i</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+  <script>
+    //declaring a ton of variables and constants
+    let countL = 0;
+    let countU = 0;
+    let countR = 0;
+    let countD = 0;
+    let coordX = 0;
+    let coordY = 0;
+    const timer = document.getElementById("timer");
+    const timer2 = document.getElementById("timer2");
+    const timer3 = document.getElementById("timer3");
+    const timer4 = document.getElementById("timer4");
+    const displayX = document.getElementById("displayX");
+    const displayY = document.getElementById("displayY");
+
+    //checks for when key pressed
+    window.addEventListener("keydown", arrowMoves, false);
+    //takes count information and calculates coords
+    function arrowMoves(key) {
+      checkArrowPress(key);
+      coordX = Math.round(countR / 10 - countL / 10);
+      coordY = Math.round(countU / 10 - countD / 10);
+      displayX.textContent = "X" + coordX;
+      displayY.textContent = "Y" + coordY;
+    }
+    //takes key input, checks for arrow keys, advances counters
+    function checkArrowPress(key) {
+      if (key.keyCode == "37") {
+        countL += 1;
+        timer.textContent = "L" + countL;
+      }
+      if (key.keyCode == "38") {
+        countU += 1;
+        timer2.textContent = "U" + countU;
+      }
+      if (key.keyCode == "39") {
+        countR += 1;
+        timer3.textContent = "R" + countR;
+      }
+      if (key.keyCode == "40") {
+        countD += 1;
+        timer4.textContent = "D" + countD;
+      }
+    }
+    /*
+    //compact version doesn't work, isn't much more compact anyway
+    function checkArrowPress(key) {
+      checkKeyPressCounter(key,"37",countL,timer1,"L")
+      checkKeyPressCounter(key,"38",countL,timer1,"U")
+      checkKeyPressCounter(key,"39",countL,timer1,"R")
+      checkKeyPressCounter(key,"40",countL,timer1,"D")
+    function checkKeyPressCounter(key, value,name,element,letter){
+      if (key.keyCode == value) {
+        counter(name, element, letter)
+      }
+    }
+    function counter(name, element, letter){
+      name += 1;
+      element.textContent = letter + name;
+    }
+    */
+
+    //whenever I move a 'space', an array keeps track of X/Y positions...
+
+    var xyTracker = [];
+    document.getElementById("xyDisplay").innerHTML = xyTracker;
+    function addToArray(array, x, y) {
+      let temparray = [x, y];
+      array.push(temparray);
+      document.getElementById("xyDisplay").innerHTML = xyTracker;
+    }
+    function tableSelect(x, y) {
+      v1 = "r" + x;
+      v2 = "c" + y;
+      document.getElementById("");
+    }
+    //detect when key press: deselect everything, then select where 'position' is currently...
+
+    ///what I need to do next: for loop run through all td elements (count them?), then remove all "color" attribute.
+    ///ok, then, give just the one at the specified "XY" coords a color
+
+    //if an X/Y position isn't in the array, create a new square at that position
+  </script>
+</html>
