@@ -152,24 +152,28 @@
     </footer> -->
 
 
-    <script>
-      // after all html is loaded
-      document.addEventListener("DOMContentLoaded", () => {
-      // preload track
-      const bgm = new Audio("sound/intoThisWorld_volcasampEdit.mp3");
-      bgm.autoplay = true;
-      bgm.loop = true;
-      bgm.load();
-  
-      // warning click
-      document.getElementById("cover").addEventListener("click", function() {
-      this.style.opacity = "0";
-      setTimeout(() => {
-      this.style.display = "none";
-      }, 3000);
-      bgm.play();  
-      });
-      });
-    </script>
+ 
+
+
+
+<script>
+  // after all html is loaded
+  document.addEventListener("DOMContentLoaded", () => {
+  // preload track
+  const bgm = new Audio("sound/outofmycontrol_thunderandvoice_loop.mp3");
+  bgm.autoplay = true;
+  bgm.loop = true;
+  bgm.load();
+
+  // warning click
+  document.getElementById("cover").addEventListener("click", function() {
+  this.style.opacity = "0";
+  setTimeout(() => {
+  this.style.display = "none";
+  }, 4000);
+  bgm.play();  
+  });
+  });
+</script>
   </body>
 </html>
