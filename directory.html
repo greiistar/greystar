@@ -98,10 +98,25 @@
 <!-- End of CuterCounter Code -->
     </main>
 
-    <audio autoplay loop src="ph6_atlantis[spaced_out_v1_edit_-4db].mp3"></audio>
-    <audio autoplay loop>
-        <source src="ph6_atlantis[spaced_out_v1_edit_-4db].mp3" type="audio/mpeg">
-    </audio>
+    <script>
+        // after all html is loaded
+        document.addEventListener("DOMContentLoaded", () => {
+        // preload track
+        const bgm = new Audio("ph6_atlantis[spaced_out_v1_edit_-4db].mp3");
+        bgm.autoplay = true;
+        bgm.loop = true;
+        bgm.load();
+      
+        // warning click
+        document.getElementById("cover").addEventListener("click", function() {
+        this.style.opacity = "0";
+        setTimeout(() => {
+        this.style.display = "none";
+        }, 4000);
+        bgm.play();  
+        });
+        });
+      </script>
     
   </body>
 </html>
