@@ -14,28 +14,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Beginning</title>
+    <title>directory</title>
     <style>
       /*@font-face {
       font-family: GraublauWeb;
       src: url("path/GraublauWeb.otf") format("opentype");
       */
-      #cover {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #000;
-      z-index: 413;
-      text-align: center;
-      opacity: 1;
-      transition: opacity 3s;
-      transition-timing-function: ease-in-out;
-      transition-delay: 0s;
-      user-select: none;
-      }
-
       body {
         padding-top: 20px;
         background-color: black;
@@ -74,54 +58,31 @@
     />
   </head>
   <body>
-    <div id="cover" style="background-color:grey;">
-      <img style="
-      top: 50%;
-      left: 50%;" 
-      src="images/black_circle.png" width="500vh" height="500vh" draggable="false">
-    </div>
-    
-
     <main class="w3-container w3-content w3-center w3-black">
       <div class="center">
-        <img src="spincomp4.gif" alt="my_logo" width="45%" height="45%" />
+        <img src="images/grey_logo.jpg" alt="my_logo" width="25%" height="25%" />
       </div>
       <a
         class="social-links"
         style="  text-decoration-line: underline; text-decoration-color: cyan;"
-        href="directory.html"
-        >thoughts [new]</a
+        href="index.html"
+        >back to homepage</a
       ><br />
+      <h2 style="color:grey"><i>the directory [wip]</i></h2>
+      
+      <a
+      class="social-links"
+      style="text-decoration-line: none;"
+      href="depth1_control.html"
+      >the depths 1 <i style="text-decoration-line: underline; text-decoration-color: cyan;">[new]</i></a
+    ><br />
       <a
         class="social-links"
-        style="text-decoration:none"
-        href="https://greystar.bandcamp.com/"
-        >bandcamp</a
+        style="text-decoration-line: none;"
+        href="blog1.html"
+        ><b style="color:red">greystar blog post 1</b> <i style="color:#909090">1.10.25</i> <i style="text-decoration-line: underline; text-decoration-color: cyan;">[new]</i></a
       ><br />
-      <a
-        class="social-links"
-        style="text-decoration:none"
-        href="https://open.spotify.com/artist/7Lka26u3eUrcL5Dewfuvq5"
-        >spotify</a
-      ><br />
-      <a
-        class="social-links"
-        style="text-decoration:none"
-        href="https://soundcloud.com/greystarmusic"
-        >soundcloud</a
-      ><br />
-      <a
-        class="social-links"
-        style="text-decoration:none"
-        href="https://www.youtube.com/channel/UCf-fZnpmZXoXtjtd6jRKxSg"
-        >youtube</a
-      ><br />
-      <a
-        class="social-links"
-        style="text-decoration:none"
-        href="https://instagram.com/_greystar"
-        >instagram</a
-      ><br />
+      
       <!--<a
         class="social-links"
         style="text-decoration:italic"
@@ -137,39 +98,10 @@
 <!-- End of CuterCounter Code -->
     </main>
 
-    <h2 class="center"></h2>
-    <p class="center"></p>
-
-    <!-- <footer class="center" style="font-size:10px; text-align: bottom;">
-      <p>
-
-        <a href="test.html">test animation</a>
-        <a href="random4grid-final.html"> ...test grid</a>
-        <a href="lurdMovie.html">...moving image</a> <br />
-        <a href="randomMathLurdv2.html">spacev1</a>
-        <a href="BRAINRAVE.html">brainravething</a>
-      </p>
-    </footer> -->
-
-
-    <script>
-      // after all html is loaded
-      document.addEventListener("DOMContentLoaded", () => {
-      // preload track
-      const bgm = new Audio("sound/ph6_atlantis[spaced_out_v1_edit].mp3");
-      bgm.autoplay = true;
-      bgm.loop = true;
-      bgm.load();
-  
-      // warning click
-      document.getElementById("cover").addEventListener("click", function() {
-      this.style.opacity = "0";
-      setTimeout(() => {
-      this.style.display = "none";
-      }, 3000);
-      bgm.play();  
-      });
-      });
-    </script>
+    <audio autoplay loop src="sound/ph6_atlantis[spaced_out_v1_edit].mp3"></audio>
+    <audio autoplay loop>
+        <source src="sound/ph6_atlantis[spaced_out_v1_edit].mp3" type="audio/mpeg">
+    </audio>
+    
   </body>
 </html>
