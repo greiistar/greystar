@@ -30,7 +30,7 @@
       z-index: 413;
       text-align: center;
       opacity: 1;
-      transition: opacity 3s;
+      transition: opacity 2s;
       transition-timing-function: ease-in-out;
       transition-delay: 0s;
       user-select: none;
@@ -41,6 +41,28 @@
         background-color: black;
         color: white;
         background-size: cover;
+      }
+      :root {
+        --backgroundSize: 1000px;
+      }
+      @keyframes movingBackground {
+        from { background-position: 0 0;}
+        to {background-position: var(--backgroundSize) var(--backgroundSize);}
+        } 
+      .body3{
+            background-size: var(--backgroundSize);
+            background-image: url("images/dots_2_grid1200x_v2_clickToEnter.png");
+            background-repeat: repeat;
+            animation: movingBackground 30s linear infinite;
+      }
+
+      .rotating {
+        animation: rotate linear 80s infinite;
+      }
+
+      @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
       }
 
       @font-face {
@@ -74,17 +96,23 @@
     />
   </head>
   <body>
-    <div id="cover" style="background-color:black">
-      <img style="
-      top: 50%;
-      left: 50%;" 
-      src="images/bw_circe.png" width="500vh" height="500vh" draggable="false">
+    <main class="w3-container w3-center body3" id="cover" style="background-color:white;">
+      
+    <div class="center" style="margin-left:auto;margin-right:auto; max-width:980px"">
+      <img
+      class="rotating" 
+      style=
+      "top: 50%;
+      left: 50%;
+      margin-top:2%; 
+      filter: drop-shadow(black 0em 0em 3em)"
+      src="images/bw_circe_576.png" width="45%" height="45%" draggable="false">
     </div>
-    
+    </main>
 
     <main class="w3-container w3-content w3-center w3-black">
       <div class="center">
-        <img src="spincomp4.gif" alt="my_logo" width="45%" height="45%" />
+        <img src="gifs/spincomp4_transparency.gif" alt="my_logo" width="45%" height="45%" />
       </div>
       <a
         class="social-links"
@@ -170,7 +198,7 @@
   this.style.opacity = "0";
   setTimeout(() => {
   this.style.display = "none";
-  }, 4000);
+  }, 2000);
   bgm.play();  
   });
   });

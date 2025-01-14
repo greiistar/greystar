@@ -165,4 +165,25 @@
     </main>
     </div>
     </div>
+
+
+    <script>
+      // after all html is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+      // preload track
+      const bgm = new Audio("sound/ph6_atlantis[spaced_out_v1_edit_4db].mp3");
+      bgm.autoplay = true;
+      bgm.loop = true;
+      bgm.load();
+    
+      // warning click
+      document.getElementById("cover").addEventListener("click", function() {
+      this.style.opacity = "0";
+      setTimeout(() => {
+      this.style.display = "none";
+      }, 4000);
+      bgm.play();  
+      });
+      });
+    </script>
   </body>
