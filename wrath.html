@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SPJS4L8WXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SPJS4L8WXH');
+</script>
+    <link rel="icon" href="gif1/1.png" type="image/png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>GREYSTAR - WRATH</title>
+    <style>
+      /*@font-face {
+      font-family: GraublauWeb;
+      src: url("path/GraublauWeb.otf") format("opentype");
+      */
+      :root {
+        --backgroundSize: 1000px;
+      }
+      html,body { height:100%; }
+      body {
+        /*padding-top: 20px;*/
+        /*background-color: black;*/
+       
+        color: white;
+        background-size: var(--backgroundSize);
+        background-image: url("images/dots_2_grid1200x_v2_DIM.png");
+        background-repeat: repeat;
+        animation: movingBackground 150s linear infinite;
+      }
+        @keyframes movingBackground {
+        from { background-position: 0 0;}
+        to {background-position: 0 var(--backgroundSize);}
+        }   
+        .body2{
+            background-size: var(--backgroundSize);
+            background-image: url("images/dots_1_grid1200x_v2.png");
+            background-repeat: repeat;
+            animation: movingBackground 50s linear infinite;
+        }
+        .body3{
+            background-size: var(--backgroundSize);
+            background-image: url("images/dots_1_grid1200x_v2.png");
+            background-repeat: repeat;
+            animation: movingBackground 80s linear infinite;
+        }
+      @font-face {
+        font-family: FuturaStd-Bold;
+        src: url("FuturaStd-Bold.otf") format("opentype");
+        font-family: FuturaStd-Light;
+        src: url("FuturaStd-Light.otf") format("opentype");
+      }
+      /* Dotted border */
+      hr.dotted {
+        border-top: 5px dashed #363636;
+      }
+      h2 {
+      }
+      /*a {
+        font-family: FuturaStd-Light;
+        font-size: 22px;
+      }*/
+      .center {
+        display: flex;
+        justify-content: center;
+      }
+      .social-links {
+        font-size: 250%;
+      }
+    </style>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="body2">
+    <div class="body3">
+    <main class="w3-container w3-content w3-center" style="background:rgba(0, 0, 0, 0.0); padding-top: 20px;">
+    
+    <!--<div class="center">
+        <img src="spincomp4.gif" alt="my_logo" width="25%" height="25%" />
+      </div>-->
+      <a
+        style=" text-decoration-line: underline"
+        href="directory.html"
+        >back to directory</a
+      ><br />
+      <h1><b style="color:red">WRATH (EP) OUT NOW</b></h1>
+      <p><i>Released March 1st, 2025 on Reactionary Records & Self-Released.</i></p>
+      <img style="width:40%" src="images/WRATH_drawn_Transparent.png" alt="wrath image">
+      <p>
+        <a href="https://greystar.bandcamp.com/album/wrath">BANDCAMP (GREYSTAR)</a><br/>
+        <a href="https://reactionary.bandcamp.com/album/wrath">BANDCAMP (REACTIONARY RECORDS)</a><br/>
+        <a href="https://www.youtube.com/watch?v=ubz3EI9_Aek">YOUTUBE</a><br/>
+        <a href="https://soundcloud.com/greystarmusic/sets/wrath">SOUNDCLOUD</a><br/>
+        <br/>
+        <i>Limited Edition Mini 3" CDs available only on the Reactionary bandcamp page.</i>
+      </p>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    </main>
+    </div>
+    </div>
+
+
+    <script>
+      // after all html is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+      // preload track
+      const bgm = new Audio("sound/ph6_atlantis[spaced_out_v1_edit_4db].mp3");
+      bgm.autoplay = true;
+      bgm.loop = true;
+      bgm.load();
+    
+      // warning click
+      document.getElementById("cover").addEventListener("click", function() {
+      this.style.opacity = "0";
+      setTimeout(() => {
+      this.style.display = "none";
+      }, 4000);
+      bgm.play();  
+      });
+      });
+    </script>
+  </body>
