@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Centered Links</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+    }
+
+    header {
+      margin-bottom: 60px;
+    }
+
+    .links-container {
+      display: flex;
+      flex-direction: column; /* Stack links vertically */
+      align-items: center; /* Center the links horizontally */
+      gap: 20px; /* Add space between each link */
+      margin-top: 40px;
+    }
+
+    .links-container a {
+      text-decoration: none;
+      color: #007bff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: color 0.2s ease;
+      display: inline-block; /* Make sure the link takes its own width */
+      width: 200px; /* All links have the same width */
+      text-align: center; /* Center the text inside each link */
+      position: relative; /* Important for positioning the "NEW" tag */
+    }
+
+    .links-container a:hover {
+      color: #0056b3;
+    }
+
+    .new-tag {
+      background-color: red;
+      color: white;
+      font-size: 0.9rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      position: absolute;
+      top: 50%;
+      right: -30px; /* Reduced space between "Pictures" and "NEW" */
+      transform: translateY(-50%); /* Vertically center the "NEW" tag */
+    }
+
+    .dummy-content {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to the Site</h1>
+    <p>This is a demo of a centered list of links with a "NEW" tag.</p>
+  </header>
+
+  <!-- Vertical List of Links -->
+  <div class="links-container">
+    <!-- Pictures link with "NEW" tag next to it -->
+    <a href="#">Pictures <span class="new-tag">NEW</span></a>
+    <a href="#">Videos</a>
+    <a href="#">Documents</a>
+    <a href="#">Music</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <div class="dummy-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nisi ut lacus fermentum feugiat.</p>
+    <p>More content can go here below the links.</p>
+  </div>
+
+</body>
+</html>

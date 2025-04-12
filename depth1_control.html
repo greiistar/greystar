@@ -91,6 +91,25 @@
       .social-links {
         font-size: 250%;
       }
+
+      .guestbook-highlight-on-hover:hover {
+      color: yellow;
+    }
+    .guestbook-highlight-on-hover {
+      text-decoration: none;
+      transition: color 0.9s ease, color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .back-highlight-on-hover:hover {
+      text-decoration: underline;
+      color: cyan;
+    }
+    .back-highlight-on-hover {
+      text-decoration: none;
+      transition: color 0.3s ease, color 0.3s ease;
+    }
+
     </style>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link
@@ -105,8 +124,8 @@
   </head>
   <body >
     <a
-    class="social-links"
-    style="text-decoration-line: none; color:white;margin-left: 10px;"
+    class="social-links guestbook-highlight-on-hover"
+    style="margin-left: 10px;"
     href="directory.html"
     >x</a
   >
@@ -114,11 +133,11 @@
     <div class="body3" style="height: 100%">
       <div id="cover">
         <p style="margin-top:10cap">
-          <h1>click to listen</h1><br/>
-          <b>warning: flashing imagery sorta</b><br/>
-          song: "greystar - outofmycontrol_thunderandvoice" (unreleased) <br/>
-          although i used a part of this song at the end of "kyle's marimba" <br/>
-          from <a href="https://greystar.bandcamp.com/album/playgrounds-recess">playgrounds: recess</a>
+          <h1 class="guestbook-highlight-on-hover">click to listen</h1><br/>
+          <b style="margin: 0;" class="guestbook-highlight-on-hover">warning: flashing imagery sorta</b>
+          <p style="margin: 0;" class="guestbook-highlight-on-hover">song: "greystar - outofmycontrol_thunderandvoice" (unreleased)</p>
+          <p style="margin: 0;" class="guestbook-highlight-on-hover"> although i used a part of this song at the end of "kyle's marimba" </p>
+          <p style="margin: 0;" class="guestbook-highlight-on-hover">from <a class="back-highlight-on-hover" href="https://greystar.bandcamp.com/album/playgrounds-recess">playgrounds: recess</a></p>
         </p>
         <img src="images/grey_logo.jpg" width="400vh" height="400vh" draggable="false">
       </div>

@@ -72,6 +72,33 @@
       .social-links {
         font-size: 250%;
       }
+
+      .guestbook-highlight-on-hover:hover {
+      text-decoration: underline;
+      color: yellow;
+      }
+      .guestbook-highlight-on-hover {
+        text-decoration: none;
+        transition: color 0.3s ease, color 0.3s ease;
+      }
+
+      .back-highlight-on-hover:hover {
+      text-decoration: underline;
+      color: cyan;
+      }
+      .back-highlight-on-hover {
+        text-decoration: none;
+        transition: color 0.3s ease, color 0.3s ease;
+      }
+
+      hr.fancy {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #aaa, transparent);
+      margin: 20px 0;
+      }
+
+
     </style>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link
@@ -92,13 +119,12 @@
         <img src="spincomp4.gif" alt="my_logo" width="25%" height="25%" />
       </div>-->
       <a
-        class="social-links"
-        style="  text-decoration-line: underline; text-decoration-color: cyan;"
+        class="social-links back-highlight-on-hover"
         href="directory.html"
         >back to directory</a
       ><br />
       <hr>
-      <h1><b style="color:red">greystar blog post 1</b> <i style="color:#909090">1.10.25</i></h1>
+      <h1><b style="color:rgb(205, 29, 155);">greystar blog post 1</b> <i style="color:#909090">1.10.25</i></h1>
       <p><b style="color:blueviolet">the medium is the message</b></p>
       <p>I've been pretty active on instagram lately. It has grown into my main platform for reaching my audience.</p>
       <p>I don't mind it, but I find that in order to be successful using the platform, I have to cater to its way of doing things... not even to reach new people, just to reach the people who already follow me. It elicites a marketing mentality out of necessity. It is an image-based platform after all.</p>
@@ -162,10 +188,19 @@
             Ok! Have a good day!<br/></p>
             <p><b>song in background: "ph6 atlantis (spaced out v1)" (unreleased)</b></p>
             <b style="color:red">end of blog post 1</b>
-            <br/><br/><br/>
+            
+
+            <hr class="fancy">
+
+            <footer>   
+            <a class="guestbook-highlight-on-hover" href="http://users.smartgb.com/g/g.php?a=s&i=g19-01188-b4">sign my guest book</a>
+             </footer>
+             <br/>
     </main>
     </div>
     </div>
+
+   
 
 
     <script>

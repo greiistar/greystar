@@ -84,6 +84,101 @@
       .social-links {
         font-size: 250%;
       }
+
+      .new-tag {
+        color: #B8283F;
+        font-weight: bold;
+        font-size: 0.85em;
+      }
+
+      .guestbook-highlight-on-hover:hover {
+        text-decoration: underline;
+        color: yellow;
+      }
+      .guestbook-highlight-on-hover {
+        text-decoration: none;
+        transition: color .6s ease;
+      }
+
+      .one-highlight-on-hover:hover {
+        text-decoration: underline;
+        color: rgb(255, 0, 0);
+      }
+      .one-highlight-on-hover {
+        text-decoration: none;
+        transition: color .6s ease;
+      }
+      .two-highlight-on-hover:hover {
+        text-decoration: underline;
+      color: rgb(255, 0, 191);
+      }
+      .two-highlight-on-hover {
+        text-decoration: none;
+        transition: color .6s ease;
+      }
+
+      .thr-highlight-on-hover:hover {
+        text-decoration: underline;
+      color: rgb(195, 0, 255);
+      }
+      .thr-highlight-on-hover {
+        text-decoration: none;
+        transition: color .6s ease;
+      }
+
+      .fou-highlight-on-hover:hover {
+        text-decoration: underline;
+      color: rgb(0, 110, 255);
+      }
+      .fou-highlight-on-hover {
+        text-decoration: none;
+        transition: color .6s ease;
+      }
+
+      .fiv-highlight-on-hover:hover {
+        text-decoration: underline;
+      color: rgb(0, 255, 136);
+      }
+      .fiv-highlight-on-hover {
+        text-decoration: none;
+        transition: color .6s ease;
+      }
+
+      .six-highlight-on-hover:hover {
+        text-decoration: underline;
+      color: rgb(136, 255, 0);
+      }
+      .six-highlight-on-hover {
+        text-decoration: none;
+        transition: color .6s ease;
+      }
+
+      hr.fancy {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #aaa, transparent);
+      margin: 20px 0;
+      }
+
+      .links-container a {
+      display: inline-block; /* Make sure the link takes its own width */
+      width: 200px; /* All links have the same width */
+      text-align: center; /* Center the text inside each link */
+      position: relative; /* Establishes a reference for absolute positioning of the "NEW" tag */
+    }
+
+    .new-tag {
+      color: #B8283F;
+      font-size: 1.5rem;
+      padding: 2px 8px;
+      font-style: italic;
+      font-weight: bold;
+      position: absolute; /* This removes it from the normal flow */
+      top: 50%; /* Vertically center the "NEW" tag relative to the "Pictures" link */
+      right: -30px; /* Move the "NEW" tag to the right of the link */
+      transform: translateY(-50%); /* Adjust vertical alignment */
+    }
+
     </style>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link
@@ -96,6 +191,7 @@
     />
   </head>
   <body>
+
     <main class="w3-container w3-center body3" id="cover" style="background-color:white;">
       
     <div class="center" style="margin-left:auto;margin-right:auto; max-width:980px"">
@@ -112,61 +208,61 @@
 
     <main class="w3-container w3-content w3-center w3-black">
       <div class="center">
-        <img src="gifs/spincomp4_transparency.gif" alt="my_logo" width="45%" height="45%" />
+        <img src="gifs/sc4_crop2.gif" alt="my_logo" width="45%" height="45%" />
       </div>
-      <a
-        class="social-links"
-        style="  text-decoration-line: underline; text-decoration-color: cyan;"
-        href="directory.html"
-        >thoughts [new]</a
-      ><br />
-      <a
-        class="social-links"
-        style="text-decoration:none"
-        href="https://greystar.bandcamp.com/"
-        >bandcamp</a
-      ><br />
-      <a
-        class="social-links"
-        style="text-decoration:none"
-        href="https://open.spotify.com/artist/7Lka26u3eUrcL5Dewfuvq5"
-        >spotify</a
-      ><br />
-      <a
-        class="social-links"
-        style="text-decoration:none"
-        href="https://soundcloud.com/greystarmusic"
-        >soundcloud</a
-      ><br />
-      <a
-        class="social-links"
-        style="text-decoration:none"
-        href="https://www.youtube.com/channel/UCf-fZnpmZXoXtjtd6jRKxSg"
-        >youtube</a
-      ><br />
-      <a
-        class="social-links"
-        style="text-decoration:none"
-        href="https://instagram.com/_greystar"
-        >instagram</a
-      ><br />
+
+      <div class="links-container">
+        <a
+          class="social-links one-highlight-on-hover"
+          href="directory.html"
+          >thoughts <span class="new-tag">new!</span></a
+        >
+        <br />
+        <a
+          class="social-links two-highlight-on-hover"
+          href="https://greystar.bandcamp.com/"
+          >bandcamp</a
+        ><br />
+        <a
+          class="social-links thr-highlight-on-hover"
+          href="https://open.spotify.com/artist/7Lka26u3eUrcL5Dewfuvq5"
+          >spotify</a
+        ><br />
+        <a
+          class="social-links fou-highlight-on-hover"
+          href="https://soundcloud.com/greystarmusic"
+          >soundcloud</a
+        ><br />
+        <a
+          class="social-links fiv-highlight-on-hover"
+          href="https://www.youtube.com/channel/UCf-fZnpmZXoXtjtd6jRKxSg"
+          >youtube</a
+        ><br />
+        <a
+          class="social-links six-highlight-on-hover"
+          href="https://instagram.com/_greystar"
+          >instagram</a
+        >
+      </div>
+    
       <!--<a
         class="social-links"
         style="text-decoration:italic"
         href="epk"
         >Electronic Press Kit</a
       ><br />-->
-      <br />
-      <a href="http://users.smartgb.com/g/g.php?a=s&i=g19-01188-b4">sign my guest book</a>
-      <br />
+      <hr class="fancy">
+
+      <footer>   
+      <a class="guestbook-highlight-on-hover" href="http://users.smartgb.com/g/g.php?a=s&i=g19-01188-b4">sign my guest book</a>
+        </footer>
       <!--pageviews--> 
       <!-- Start of CuterCounter Code -->
 <!--<a href="https://www.cutercounter.com/" target="_blank"><img src="https://www.cutercounter.com/hits.php?id=hvxpcnoc&nd=6&style=1" border="0" alt="hit counter"></a>-->
 <!-- End of CuterCounter Code -->
     </main>
 
-    <h2 class="center"></h2>
-    <p class="center"></p>
+    
 
     <!-- <footer class="center" style="font-size:10px; text-align: bottom;">
       <p>

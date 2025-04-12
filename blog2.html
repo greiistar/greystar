@@ -108,6 +108,32 @@
       .social-links {
         font-size: 250%;
       }
+
+      .guestbook-highlight-on-hover:hover {
+      text-decoration: underline;
+      color: yellow;
+      }
+      .guestbook-highlight-on-hover {
+        text-decoration: none;
+        transition: color 0.3s ease, color 0.3s ease;
+      }
+
+      .back-highlight-on-hover:hover {
+      text-decoration: underline;
+      color: cyan;
+      }
+      .back-highlight-on-hover {
+        text-decoration: none;
+        transition: color 0.3s ease, color 0.3s ease;
+      }
+
+      hr.fancy {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #aaa, transparent);
+      margin: 20px 0;
+      }
+
     </style>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link
@@ -128,24 +154,23 @@
     <div class="body7">
     <div class="body8">
     <div class="body9">
-    <main class="w3-container w3-content w3-center" style="background:rgba(0, 0, 0, 0.0); padding-top: 20px;">
+    <main class="w3-container w3-content w3-center" style="background:rgba(0, 0, 0, 0.5); padding-top: 20px;">
     
     <!--<div class="center">
         <img src="spincomp4.gif" alt="my_logo" width="25%" height="25%" />
       </div>-->
       <a
-        class="social-links"
-        style="  text-decoration-line: underline; text-decoration-color: cyan;"
+        class="social-links back-highlight-on-hover"
         href="directory.html"
         >back to directory</a
       ><br />
       <hr>
-      <h1><b style="color:black">greystar blog post 2</b> <i style="color:#353535">1.21.25</i></h1>
-      <p><b style="color:rgb(47, 47, 47)">ok im doing it again</b></p>
+      <h1><b style="color:rgb(205, 29, 155);">greystar blog post 2</b> <i style="color:#909090">1.10.25</i></h1>
+      <p><b style="color:#909090">ok im doing it again</b></p>
       <p>I want to do another blog post!! I'm going to do it!! i dunno i really enjoyed doing it the last time. <br/>
         Got multiple things going on since then too.</p>
       <hr class="dotted">
-      <img src="images/pic_hardwareNight.jpg" alt="picture of a bunch of cool hardware" width="25%" height="25%">
+      <img src="images/pic_hardwareNight.jpg" alt="picture of a bunch of cool hardware" width="50%" height="50%">
       <p>I played a show called "HARDWARE", where the focus was having a bunch of gear <br/>
         and making cool improvised and collaborative techno in a group setting all night. <br/> 
         It was a really unique show and prolly the most fun I've had performing in a bit.</p>
@@ -172,7 +197,13 @@
         <p>   Ok! Have a good day!<br/></p>
         <p><b>song in background: "industj3" (unreleased)</b></p>
         <b style="color:red">end of blog post 2</b>
-        <br/><br/><br/>
+        
+        <hr class="fancy">
+
+        <footer>   
+        <a class="guestbook-highlight-on-hover" href="http://users.smartgb.com/g/g.php?a=s&i=g19-01188-b4">sign my guest book</a>
+         </footer>
+         <br/>
       
 
 

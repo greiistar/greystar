@@ -127,6 +127,41 @@
       .social-links {
         font-size: 250%;
       }
+
+      .guestbook-highlight-on-hover:hover {
+      color: yellow;
+      }
+      .guestbook-highlight-on-hover {
+        text-decoration: none;
+        transition: color 0.9s ease, color 0.3s ease;
+        cursor: pointer;
+      }
+      .one-highlight-on-hover:hover {
+      color: rgb(255, 99, 164);
+      }
+      .one-highlight-on-hover {
+        text-decoration: none;
+        transition: color 1.0s ease, color 1.0s ease;
+        cursor: pointer;
+      }
+      .two-highlight-on-hover:hover {
+      color: rgb(182, 93, 255);
+      }
+      .two-highlight-on-hover {
+        text-decoration: none;
+        transition: color 1.0s ease, color 1.0s ease;
+        cursor: pointer;
+      }
+
+      .thr-highlight-on-hover:hover {
+      color: rgb(103, 169, 255);
+      }
+      .thr-highlight-on-hover {
+        text-decoration: none;
+        transition: color 1.0s ease, color 1.0s ease;
+        cursor: pointer;
+      }
+
     </style>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link
@@ -150,17 +185,16 @@
     <div class="body8" style="height: 100%">
     <div class="body9" style="height: 100%">
       <a
-    class="social-links"
-    style="text-decoration-line: none; color:white;margin-left: 10px;"
+    class="social-links guestbook-highlight-on-hover"
+    style="margin-left: 10px;"
     href="directory.html"
     >x</a
   >
       <div id="cover">
         <p style="margin-top:10cap">
-          <h1>click to listen</h1><br/>
-          <b>bliss room</b><br/>
-         
-          song: "greystar - in the air" (unreleased)
+          <h1 class="one-highlight-on-hover">click to listen</h1><br/>
+          <b style="margin: 0;" class="two-highlight-on-hover">bliss room</b>
+          <p style="margin: 0;" class="thr-highlight-on-hover">song: "greystar - in the air" (unreleased)</p>
         </p>
         <img src="images/grey_logo.jpg" width="400vh" height="400vh" draggable="false">
       </div>
