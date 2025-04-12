@@ -95,32 +95,33 @@
       visibility: hidden;
     }
 
-    .highlight-on-hover:hover {
-      text-decoration: underline;
-      color: rgb(190, 242, 255);
-    }
-    .highlight-on-hover {
-      text-decoration: none;
-      transition: color 0.3s ease, color 0.3s ease;
-    }
+      /* HOVER TEXT */
+      .highlight-on-hover {
+          text-decoration: none;
+          transition: color .6s ease;
+        }
 
-    .guestbook-highlight-on-hover:hover {
-      text-decoration: underline;
-      color: yellow;
-    }
-    .guestbook-highlight-on-hover {
-      text-decoration: none;
-      transition: color 0.3s ease, color 0.3s ease;
-    }
+      /*.highlight-on-hover:hover,
+      .highlight-on-hover.mobile-highlighted {
+        text-decoration: underline;
+      }*/
 
-    .back-highlight-on-hover:hover {
-      text-decoration: underline;
-      color: cyan;
-    }
-    .back-highlight-on-hover {
-      text-decoration: none;
-      transition: color 0.3s ease, color 0.3s ease;
-    }
+      /* HOVER COLORS */
+      .guestbook-hover { --hover-color: yellow; }
+      .back-hover { --hover-color: cyan; }
+      .reg-hover { --hover-color: rgb(190, 242, 255); }
+      .one-hover { --hover-color: rgb(255, 0, 0); }
+      .two-hover { --hover-color: rgb(255, 0, 191); }
+      .thr-hover { --hover-color: rgb(140, 0, 255); }
+      .fou-hover { --hover-color: rgb(0, 110, 255); }
+      .fiv-hover { --hover-color: rgb(0, 255, 136); }
+      .six-hover { --hover-color: rgb(136, 255, 0); }
+
+      /* VAR APPLIED TO TEXT*/
+      .highlight-on-hover:hover,
+      .highlight-on-hover.mobile-highlighted {
+      color: var(--hover-color);
+      }
 
     hr.fancy {
     border: none;
@@ -160,7 +161,7 @@
         </div>
 
         <a
-        class="social-links back-highlight-on-hover"
+        class="social-links highlight-on-hover back-hover"
         href="index.html">
         back to homepage
         </a>
@@ -171,36 +172,36 @@
 
         <ul class="blog-list">
             <li class="blog-entry">
-                <h3 class="release-title"><a class="highlight-on-hover" href="wrath.html">WRATH EP OUT NOW</a></h3>
+                <h3 class="release-title"><a class="highlight-on-hover reg-hover" href="wrath.html">WRATH EP OUT NOW</a></h3>
                 <time datetime="2024-12-01">3.1.25</time>
                 <span class="new-tag">New</span>
                 </li>
             <li class="blog-entry">
-                <h3 class="blog-title"><a class="highlight-on-hover" href="blog2.html">greystar blog post 2</a></h3>
+                <h3 class="blog-title"><a class="highlight-on-hover reg-hover" href="blog2.html">greystar blog post 2</a></h3>
                 <time datetime="2024-10-22">1.21.25</time>
                 <span class="placeholder">New</span>
                 </li>
             <li class="blog-entry">
-                <h3 class="special-title"><a class="highlight-on-hover" href="depth2_bliss.html">bliss room</a></h3>
+                <h3 class="special-title"><a class="highlight-on-hover reg-hover" href="depth2_bliss.html">bliss room</a></h3>
                 <time datetime="2024-10-22">1.21.25</time>
                 <span class="placeholder">New</span>
                 </li>
             <li class="blog-entry">
-                <h3 class="special-title"><a class="highlight-on-hover" href="depth1_control.html">the depths 1</a></h3>
+                <h3 class="special-title"><a class="highlight-on-hover reg-hover" href="depth1_control.html">the depths 1</a></h3>
                 <time datetime="2024-10-22">1.13.25</time>
                 <span class="placeholder">New</span>
                 </li>
             <li class="blog-entry">
-                <h3 class="blog-title"><a class="highlight-on-hover" href="blog1.html">greystar blog post 1</a></h3>
+                <h3 class="blog-title"><a class="highlight-on-hover reg-hover" href="blog1.html">greystar blog post 1</a></h3>
                 <time datetime="2024-08-30">1.10.25</time>
                 <span class="placeholder">New</span>
                 </li>
         </ul>
-        
+
         <hr class="fancy">
 
         <footer>   
-        <a class="guestbook-highlight-on-hover" href="http://users.smartgb.com/g/g.php?a=s&i=g19-01188-b4">sign my guest book</a>
+        <a class="highlight-on-hover guestbook-hover" href="http://users.smartgb.com/g/g.php?a=s&i=g19-01188-b4">sign my guest book</a>
          </footer>
 
     </main>
@@ -224,6 +225,28 @@
         });
         });
     </script>
+
+    <script>
+      const hoverTargets = document.querySelectorAll('.highlight-on-hover');
+
+    document.addEventListener('touchmove', (e) => {
+      const touch = e.touches[0];
+      const elementAtPoint = document.elementFromPoint(touch.clientX, touch.clientY);
+
+      hoverTargets.forEach(hoverTarget => {
+        if (hoverTarget === elementAtPoint) {
+          hoverTarget.classList.add('mobile-highlighted');
+        } else {
+          hoverTarget.classList.remove('mobile-highlighted');
+        }
+      });
+    });
+
+    document.addEventListener('touchend', () => {
+      hoverTargets.forEach(hoverTarget => hoverTarget.classList.remove('mobile-highlighted'));
+    });
+    </script>
+
 
 </body>
 </html>
