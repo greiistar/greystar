@@ -73,22 +73,25 @@
         font-size: 250%;
       }
 
-      .guestbook-highlight-on-hover:hover {
-      text-decoration: underline;
-      color: yellow;
-      }
-      .guestbook-highlight-on-hover {
-        text-decoration: none;
-        transition: color 0.3s ease, color 0.3s ease;
-      }
+      /* HOVER TEXT */
+      .highlight-on-hover {
+          text-decoration: none;
+          transition: color .6s ease;
+        }
 
-      .back-highlight-on-hover:hover {
-      text-decoration: underline;
-      color: cyan;
-      }
-      .back-highlight-on-hover {
-        text-decoration: none;
-        transition: color 0.3s ease, color 0.3s ease;
+      /*.highlight-on-hover:hover,
+      .highlight-on-hover.mobile-highlighted {
+        text-decoration: underline;
+      }*/
+
+      /* HOVER COLORS */
+      .guestbook-hover { --hover-color: yellow; }
+      .back-hover { --hover-color: cyan; }
+
+      /* VAR APPLIED TO TEXT*/
+      .highlight-on-hover:hover,
+      .highlight-on-hover.mobile-highlighted {
+      color: var(--hover-color);
       }
 
       hr.fancy {
@@ -119,7 +122,7 @@
         <img src="spincomp4.gif" alt="my_logo" width="25%" height="25%" />
       </div>-->
       <a
-        class="social-links back-highlight-on-hover"
+        class="social-links highlight-on-hover back-hover"
         href="directory.html"
         >back to directory</a
       ><br />
@@ -193,7 +196,7 @@
             <hr class="fancy">
 
             <footer>   
-            <a class="guestbook-highlight-on-hover" href="http://users.smartgb.com/g/g.php?a=s&i=g19-01188-b4">sign my guest book</a>
+            <a class="highlight-on-hover guestbook-hover" href="http://users.smartgb.com/g/g.php?a=s&i=g19-01188-b4">sign my guest book</a>
              </footer>
              <br/>
     </main>
@@ -222,4 +225,26 @@
       });
       });
     </script>
+
+    <script>
+      const hoverTargets = document.querySelectorAll('.highlight-on-hover');
+
+    document.addEventListener('touchmove', (e) => {
+      const touch = e.touches[0];
+      const elementAtPoint = document.elementFromPoint(touch.clientX, touch.clientY);
+
+      hoverTargets.forEach(hoverTarget => {
+        if (hoverTarget === elementAtPoint) {
+          hoverTarget.classList.add('mobile-highlighted');
+        } else {
+          hoverTarget.classList.remove('mobile-highlighted');
+        }
+      });
+    });
+
+    document.addEventListener('touchend', () => {
+      hoverTargets.forEach(hoverTarget => hoverTarget.classList.remove('mobile-highlighted'));
+    });
+    </script>
+
   </body>

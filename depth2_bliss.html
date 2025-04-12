@@ -128,38 +128,33 @@
         font-size: 250%;
       }
 
-      .guestbook-highlight-on-hover:hover {
-      color: yellow;
-      }
-      .guestbook-highlight-on-hover {
-        text-decoration: none;
-        transition: color 0.9s ease, color 0.3s ease;
-        cursor: pointer;
-      }
-      .one-highlight-on-hover:hover {
-      color: rgb(255, 99, 164);
-      }
-      .one-highlight-on-hover {
-        text-decoration: none;
-        transition: color 1.0s ease, color 1.0s ease;
-        cursor: pointer;
-      }
-      .two-highlight-on-hover:hover {
-      color: rgb(182, 93, 255);
-      }
-      .two-highlight-on-hover {
-        text-decoration: none;
-        transition: color 1.0s ease, color 1.0s ease;
-        cursor: pointer;
-      }
+     /* HOVER TEXT */
+     .highlight-on-hover {
+          text-decoration: none;
+          transition: color .6s ease;
+          cursor:pointer;
+        }
 
-      .thr-highlight-on-hover:hover {
-      color: rgb(103, 169, 255);
-      }
-      .thr-highlight-on-hover {
-        text-decoration: none;
-        transition: color 1.0s ease, color 1.0s ease;
-        cursor: pointer;
+      /*.highlight-on-hover:hover,
+      .highlight-on-hover.mobile-highlighted {
+        text-decoration: underline;
+      }*/
+
+      /* HOVER COLORS */
+      .guestbook-hover { --hover-color: yellow; }
+      .back-hover { --hover-color: cyan; }
+      .reg-hover { --hover-color: rgb(190, 242, 255); }
+      .one-hover { --hover-color: rgb(255, 0, 0); }
+      .two-hover { --hover-color: rgb(255, 0, 191); }
+      .thr-hover { --hover-color: rgb(140, 0, 255); }
+      .fou-hover { --hover-color: rgb(0, 110, 255); }
+      .fiv-hover { --hover-color: rgb(0, 255, 136); }
+      .six-hover { --hover-color: rgb(136, 255, 0); }
+
+      /* VAR APPLIED TO TEXT*/
+      .highlight-on-hover:hover,
+      .highlight-on-hover.mobile-highlighted {
+      color: var(--hover-color);
       }
 
     </style>
@@ -185,16 +180,16 @@
     <div class="body8" style="height: 100%">
     <div class="body9" style="height: 100%">
       <a
-    class="social-links guestbook-highlight-on-hover"
+    class="social-links highlight-on-hover back-hover"
     style="margin-left: 10px;"
     href="directory.html"
     >x</a
   >
       <div id="cover">
         <p style="margin-top:10cap">
-          <h1 class="one-highlight-on-hover">click to listen</h1><br/>
-          <b style="margin: 0;" class="two-highlight-on-hover">bliss room</b>
-          <p style="margin: 0;" class="thr-highlight-on-hover">song: "greystar - in the air" (unreleased)</p>
+          <h1 class="highlight-on-hover one-hover">click to listen</h1><br/>
+          <b style="margin: 0;" class="highlight-on-hover two-hover">bliss room</b>
+          <p style="margin: 0;" class="highlight-on-hover thr-hover">song: "greystar - in the air" (unreleased)</p>
         </p>
         <img src="images/grey_logo.jpg" width="400vh" height="400vh" draggable="false">
       </div>
@@ -232,6 +227,27 @@
       bgm.play();  
       });
       });
+    </script>
+
+    <script>
+      const hoverTargets = document.querySelectorAll('.highlight-on-hover');
+
+    document.addEventListener('touchmove', (e) => {
+      const touch = e.touches[0];
+      const elementAtPoint = document.elementFromPoint(touch.clientX, touch.clientY);
+
+      hoverTargets.forEach(hoverTarget => {
+        if (hoverTarget === elementAtPoint) {
+          hoverTarget.classList.add('mobile-highlighted');
+        } else {
+          hoverTarget.classList.remove('mobile-highlighted');
+        }
+      });
+    });
+
+    document.addEventListener('touchend', () => {
+      hoverTargets.forEach(hoverTarget => hoverTarget.classList.remove('mobile-highlighted'));
+    });
     </script>
 
   </body>

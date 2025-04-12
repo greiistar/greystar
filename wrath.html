@@ -74,32 +74,33 @@
         font-size: 250%;
       }
 
-      .highlight-on-hover:hover {
-      text-decoration: underline;
-      color: rgb(255, 0, 0);
-    }
-    .highlight-on-hover {
-      text-decoration: none;
-      transition: color 0.3s ease, color 0.3s ease;
-    }
+      /* HOVER TEXT */
+      .highlight-on-hover {
+        text-decoration: none;
+        transition: color .6s ease;
+      }
 
-    .guestbook-highlight-on-hover:hover {
-      text-decoration: underline;
-      color: yellow;
-    }
-    .guestbook-highlight-on-hover {
-      text-decoration: none;
-      transition: color 0.3s ease, color 0.3s ease;
-    }
+      /*.highlight-on-hover:hover,
+      .highlight-on-hover.mobile-highlighted {
+        text-decoration: underline;
+      }*/
 
-    .back-highlight-on-hover:hover {
-      text-decoration: underline;
-      color: cyan;
-    }
-    .back-highlight-on-hover {
-      text-decoration: none;
-      transition: color 0.3s ease, color 0.3s ease;
-    }
+      /* HOVER COLORS */
+      .guestbook-hover { --hover-color: yellow; }
+      .back-hover { --hover-color: cyan; }
+      .reg-hover { --hover-color: rgb(190, 242, 255); }
+      .one-hover { --hover-color: rgb(255, 0, 0); }
+      .two-hover { --hover-color: rgb(255, 0, 191); }
+      .thr-hover { --hover-color: rgb(140, 0, 255); }
+      .fou-hover { --hover-color: rgb(0, 110, 255); }
+      .fiv-hover { --hover-color: rgb(0, 255, 136); }
+      .six-hover { --hover-color: rgb(136, 255, 0); }
+
+      /* VAR APPLIED TO TEXT*/
+      .highlight-on-hover:hover,
+      .highlight-on-hover.mobile-highlighted {
+      color: var(--hover-color);
+      }
 
     hr.fancy {
     border: none;
@@ -109,7 +110,7 @@
     }
 
     img.responsive {
-      width: 40%; /* default for desktop */
+      width: 35%; /* default for desktop */
       height: auto;
     }
     
@@ -131,15 +132,15 @@
     />
   </head>
   <body>
-    <div class="body2">
-    <div class="body3">
+    <div class="body2" style="height: 100%">
+    <div class="body3" style="height: 100%">
     <main class="w3-container w3-content w3-center" style="background:rgba(0, 0, 0, 0.0); padding-top: 20px;">
     
     <!--<div class="center">
         <img src="spincomp4.gif" alt="my_logo" width="25%" height="25%" />
       </div>-->
       <a
-        class="back-highlight-on-hover"
+        class="highlight-on-hover back-hover"
         href="directory.html"
         >back to directory</a
       ><br />
@@ -147,10 +148,10 @@
       <p><i>Released March 1st, 2025 on Reactionary Records</i></p>
       <img class="responsive" src="images/WRATH_drawn_Transparent.png" alt="wrath image">
       <p>
-        <a class="highlight-on-hover" href="https://greystar.bandcamp.com/album/wrath">BANDCAMP (GREYSTAR)</a><br/>
-        <a class="highlight-on-hover" href="https://reactionary.bandcamp.com/album/wrath">BANDCAMP (REACTIONARY RECORDS)</a><br/>
-        <a class="highlight-on-hover" href="https://www.youtube.com/watch?v=ubz3EI9_Aek">YOUTUBE</a><br/>
-        <a class="highlight-on-hover" href="https://soundcloud.com/greystarmusic/sets/wrath">SOUNDCLOUD</a><br/>
+        <a class="highlight-on-hover one-hover" href="https://greystar.bandcamp.com/album/wrath">BANDCAMP (GREYSTAR)</a><br/>
+        <a class="highlight-on-hover one-hover" href="https://reactionary.bandcamp.com/album/wrath">BANDCAMP (REACTIONARY RECORDS)</a><br/>
+        <a class="highlight-on-hover one-hover" href="https://www.youtube.com/watch?v=ubz3EI9_Aek">YOUTUBE</a><br/>
+        <a class="highlight-on-hover one-hover" href="https://soundcloud.com/greystarmusic/sets/wrath">SOUNDCLOUD</a><br/>
         <br/>
         
         <b>Update: This project will be expanded,<br/> into a ~40min+ album. Stay tuned ;]</b></i>
@@ -159,7 +160,7 @@
     <hr class="fancy">
 
             <footer>   
-            <a class="guestbook-highlight-on-hover" href="http://users.smartgb.com/g/g.php?a=s&i=g19-01188-b4">sign my guest book</a>
+            <a class="highlight-on-hover guestbook-hover" href="http://users.smartgb.com/g/g.php?a=s&i=g19-01188-b4">sign my guest book</a>
              </footer>
              <br/>
     </main>
@@ -186,4 +187,26 @@
       });
       });
     </script>
+
+    <script>
+      const hoverTargets = document.querySelectorAll('.highlight-on-hover');
+
+    document.addEventListener('touchmove', (e) => {
+      const touch = e.touches[0];
+      const elementAtPoint = document.elementFromPoint(touch.clientX, touch.clientY);
+
+      hoverTargets.forEach(hoverTarget => {
+        if (hoverTarget === elementAtPoint) {
+          hoverTarget.classList.add('mobile-highlighted');
+        } else {
+          hoverTarget.classList.remove('mobile-highlighted');
+        }
+      });
+    });
+
+    document.addEventListener('touchend', () => {
+      hoverTargets.forEach(hoverTarget => hoverTarget.classList.remove('mobile-highlighted'));
+    });
+    </script>
+
   </body>
