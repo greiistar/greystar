@@ -30,7 +30,7 @@
       z-index: 413;
       text-align: center;
       opacity: 1;
-      transition: opacity 2s;
+      transition: opacity 1.5s;
       transition-timing-function: ease-in-out;
       transition-delay: 0s;
       user-select: none;
@@ -144,12 +144,11 @@
     />
   </head>
   <body>
+      <!-- The homepage cover "click here"-->
+    <!--
 
     <main class="w3-container w3-center body3" id="cover" style="background-color:white;">
       
-    
-<!-- The homepage cover "click here"-->
- 
     <div class="center" style="margin-left:auto;margin-right:auto; max-width:980px"">
       <img
       class="rotating responsive_gifs" 
@@ -161,7 +160,7 @@
       src="images/bw_circe_576.png"draggable="false">
     </div>
     </main>
-
+  -->
     <main class="w3-container w3-content w3-center w3-black">
       <div class="center">
         <img class="responsive_gifs" src="gifs/sc4_trans_crop3.gif" alt="my_logo" />
@@ -236,46 +235,13 @@
 
 
 
-<script>
-  // after all html is loaded
-  document.addEventListener("DOMContentLoaded", () => {
-  // preload track
-  const bgm = new Audio("sound/intoThisWorld_volcasampEdit.mp3");
-  bgm.autoplay = true;
-  bgm.loop = true;
-  bgm.load();
+  <!-- Pass the audio file name via a data attribute -->
+  <script id="music-config" data-track="sound/intoThisWorld_volcasampEdit.mp3"></script>
 
-  // warning click
-  document.getElementById("cover").addEventListener("click", function() {
-  this.style.opacity = "0";
-  setTimeout(() => {
-  this.style.display = "none";
-  }, 2000);
-  bgm.play();  
-  });
-  });
-</script>
+  <!-- Link the reusable music player -->
+  <script src="musicPlayer.js"></script>
 
-<script>
-  const hoverTargets = document.querySelectorAll('.highlight-on-hover');
-
-document.addEventListener('touchmove', (e) => {
-  const touch = e.touches[0];
-  const elementAtPoint = document.elementFromPoint(touch.clientX, touch.clientY);
-
-  hoverTargets.forEach(hoverTarget => {
-    if (hoverTarget === elementAtPoint) {
-      hoverTarget.classList.add('mobile-highlighted');
-    } else {
-      hoverTarget.classList.remove('mobile-highlighted');
-    }
-  });
-});
-
-document.addEventListener('touchend', () => {
-  hoverTargets.forEach(hoverTarget => hoverTarget.classList.remove('mobile-highlighted'));
-});
-</script>
+  <script src="hover-text.js"></script>
 
   </body>
 </html>

@@ -182,46 +182,13 @@
 
     </main>
 
-    <script>
-        // after all html is loaded
-        document.addEventListener("DOMContentLoaded", () => {
-        // preload track
-        const bgm = new Audio("sound/intoThisWorld_volcasampEdit.mp3");
-        bgm.autoplay = true;
-        bgm.loop = true;
-        bgm.load();
-      
-        // warning click
-        document.getElementById("cover").addEventListener("click", function() {
-        this.style.opacity = "0";
-        setTimeout(() => {
-        this.style.display = "none";
-        }, 4000);
-        bgm.play();  
-        });
-        });
-    </script>
+   <!-- Pass the audio file name via a data attribute -->
+  <script id="music-config" data-track="sound/intoThisWorld_volcasampEdit.mp3"></script>
 
-    <script>
-      const hoverTargets = document.querySelectorAll('.highlight-on-hover');
+  <!-- Link the reusable music player -->
+  <script src="musicPlayer.js"></script>
 
-    document.addEventListener('touchmove', (e) => {
-      const touch = e.touches[0];
-      const elementAtPoint = document.elementFromPoint(touch.clientX, touch.clientY);
-
-      hoverTargets.forEach(hoverTarget => {
-        if (hoverTarget === elementAtPoint) {
-          hoverTarget.classList.add('mobile-highlighted');
-        } else {
-          hoverTarget.classList.remove('mobile-highlighted');
-        }
-      });
-    });
-
-    document.addEventListener('touchend', () => {
-      hoverTargets.forEach(hoverTarget => hoverTarget.classList.remove('mobile-highlighted'));
-    });
-    </script>
+  <script src="hover-text.js"></script>
 
 
 </body>

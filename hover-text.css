@@ -1,8 +1,14 @@
 /* HOVER TEXT */
-
+      
+      /* Base [non-hover] */
       .highlight-on-hover {
         text-decoration: none;
-        transition: color .3s ease;
+        color: inherit;
+        /*transition: color 0.15s ease-in, text-shadow 0.15s ease-in;*/
+      }
+
+      .highlight-on-hover.no-hover {
+        transition: color 2.0s ease-out, text-shadow 2.0s ease-out;
       }
 
       /*.highlight-on-hover:hover,
@@ -23,5 +29,6 @@
       .highlight-on-hover:hover,
       .highlight-on-hover.mobile-highlighted {
       color: var(--hover-color);
+      text-shadow: 0 0 8px var(--hover-color);
       }
   
