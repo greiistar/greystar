@@ -179,6 +179,17 @@
       transform: translateY(-50%); /* Adjust vertical alignment */
     }
 
+    img.responsive_gifs {
+      width: 45%; /* default for desktop */
+      height: auto;
+    }
+    
+    @media (max-width: 768px) {
+      img.responsive_gifs {
+        width: 65%; /* or 80%, or whatever looks best */
+      }
+    }
+
     </style>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link
@@ -196,19 +207,19 @@
       
     <div class="center" style="margin-left:auto;margin-right:auto; max-width:980px"">
       <img
-      class="rotating" 
+      class="rotating responsive_gifs" 
       style=
       "top: 50%;
       left: 50%;
       margin-top:2%; 
       filter: drop-shadow(black 0em 0em 3em)"
-      src="images/bw_circe_576.png" width="45%" height="45%" draggable="false">
+      src="images/bw_circe_576.png"draggable="false">
     </div>
     </main>
 
     <main class="w3-container w3-content w3-center w3-black">
       <div class="center">
-        <img src="gifs/sc4_trans_crop3.gif" alt="my_logo" width="40%" height="40%" />
+        <img class="responsive_gifs" src="gifs/sc4_trans_crop3.gif" alt="my_logo" />
       </div>
 <br/>
       <div class="links-container">
