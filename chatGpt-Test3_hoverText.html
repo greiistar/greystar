@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mobile Hover Simulation</title>
+  <style>
+    .mobile-highlight-text {
+      color: black;
+      transition: color 0.2s ease;
+    }
+
+    .mobile-highlighted {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <p class="mobile-highlight-text" id="js-highlightTarget">Touch and move your finger over this text!</p>
+
+  <script>
+    const hoverTarget = document.getElementById('js-highlightTarget');
+
+    document.addEventListener('touchmove', (e) => {
+      const touch = e.touches[0];
+      const elementAtPoint = document.elementFromPoint(touch.clientX, touch.clientY);
+
+      if (elementAtPoint === hoverTarget) {
+        hoverTarget.classList.add('mobile-highlighted');
+      } else {
+        hoverTarget.classList.remove('mobile-higlighted');
+      }
+    });
+
+    document.addEventListener('touchend', () => {
+      hoverTarget.classList.remove('mobile-highlighted');
+    });
+  </script>
+
+</body>
+</html>
