@@ -41,12 +41,14 @@
       row-gap: 10px;
       margin-top: 10px;
       list-style: none;
-      padding: 0;
+      padding: 0 1rem;
+      margin: 0 auto;
+      max-width: 100%;
     }
 
     .blog-entry {
       display: grid;
-      grid-template-columns: 300px auto 50px;
+      grid-template-columns: 250px auto 10px;
       align-items: center;
       column-gap: 10px;
     }
@@ -127,6 +129,17 @@
     margin: 20px 0;
     }
 
+    img.responsive {
+      width: 25%; /* default for desktop */
+      height: auto;
+    }
+    
+    @media (max-width: 768px) {
+      img.responsive {
+        width: 60%; /* or 80%, or whatever looks best */
+      }
+    }
+
   </style>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link
@@ -143,7 +156,7 @@
     <main  class="w3-container w3-content w3-center w3-black">
 
         <div class="center">
-            <img src="images/grey_logo.jpg" alt="my_logo" width="25%" height="25%" />
+            <img class="responsive" src="images/grey_logo.jpg" alt="my_logo"/>
         </div>
 
         <a
