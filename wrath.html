@@ -108,6 +108,16 @@
     margin: 20px 0;
     }
 
+    img.responsive {
+      width: 40%; /* default for desktop */
+      height: auto;
+    }
+    
+    @media (max-width: 768px) {
+      img.responsive {
+        width: 60%; /* or 80%, or whatever looks best */
+      }
+    }
 
     </style>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -133,9 +143,9 @@
         href="directory.html"
         >back to directory</a
       ><br />
-      <h1><b style="color:red">WRATH (EP) OUT NOW</b></h1>
-      <p><i>Released March 1st, 2025 on Reactionary Records & Self-Released.</i></p>
-      <img style="width:40%" src="images/WRATH_drawn_Transparent.png" alt="wrath image">
+      <h1><b style="color:red">WRATH (EP)</b></h1>
+      <p><i>Released March 1st, 2025 on Reactionary Records</i></p>
+      <img class="responsive" src="images/WRATH_drawn_Transparent.png" alt="wrath image">
       <p>
         <a class="highlight-on-hover" href="https://greystar.bandcamp.com/album/wrath">BANDCAMP (GREYSTAR)</a><br/>
         <a class="highlight-on-hover" href="https://reactionary.bandcamp.com/album/wrath">BANDCAMP (REACTIONARY RECORDS)</a><br/>
@@ -143,7 +153,7 @@
         <a class="highlight-on-hover" href="https://soundcloud.com/greystarmusic/sets/wrath">SOUNDCLOUD</a><br/>
         <br/>
         
-        <b>Update: This project will be expanded into a full length, ~40min+ album. Stay tuned ;]</b></i>
+        <b>Update: This project will be expanded,<br/> into a ~40min+ album. Stay tuned ;]</b></i>
       </p>
   
     <hr class="fancy">
