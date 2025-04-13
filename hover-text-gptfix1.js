@@ -1,4 +1,3 @@
-// OPTIONAL: Class-based sound map (only if you prefer using class names)
 const soundMap = {
   "one-hover": ["sound/one-hover.mp3"],
   "two-hover": ["sound/two-hover.mp3"],
@@ -13,17 +12,16 @@ const soundMap = {
 
 const hoverTargets = document.querySelectorAll(".highlight-on-hover");
 
+// Desktop interaction
 hoverTargets.forEach(hoverTarget => {
   let soundPlayed = false;
   let audio = null;
 
-  // 1️⃣ Check for a data-sound attribute
+  // Assign correct audio source
   const dataSound = hoverTarget.dataset.sound;
-
   if (dataSound) {
     audio = new Audio(dataSound);
   } else {
-    // 2️⃣ If not found, fall back to class-based mapping
     for (let cls of hoverTarget.classList) {
       if (soundMap[cls]) {
         const sounds = soundMap[cls];
@@ -34,26 +32,24 @@ hoverTargets.forEach(hoverTarget => {
     }
   }
 
-  // 🎧 Desktop hover
-  hoverTarget.addEventListener("mouseenter", () => {
+  // pointerenter replaces mouseover
+  hoverTarget.addEventListener("pointerenter", () => {
     hoverTarget.classList.remove("no-hover");
-    hoverTarget.classList.add("desktop-highlighted"); // ⬅️ New custom class
-
     if (audio && !soundPlayed) {
       audio.currentTime = 0;
       audio.play();
-      /*soundPlayed = true;*/
+      soundPlayed = true;
     }
   });
 
-  hoverTarget.addEventListener("mouseleave", () => {
+  // pointerleave replaces mouseout
+  hoverTarget.addEventListener("pointerleave", () => {
     hoverTarget.classList.add("no-hover");
-    hoverTarget.classList.remove("desktop-highlighted"); // ✅ Add this line
-    /*soundPlayed = false;*/
+    soundPlayed = false;
   });
 });
 
-// 📱 Touchmove for mobile hover simulation
+// Mobile interaction
 let currentMobileTarget = null;
 
 document.addEventListener('touchmove', (e) => {
@@ -101,11 +97,11 @@ document.addEventListener('touchmove', (e) => {
   }
 });
 
-// 📱 Touchend resets hover on mobile
+// On touchend, clear highlight
 document.addEventListener('touchend', () => {
-  hoverTargets.forEach(hoverTarget => {
-    hoverTarget.classList.remove('mobile-highlighted');
-    hoverTarget.classList.add('no-hover');
+  if (currentMobileTarget) {
+    currentMobileTarget.classList.remove("mobile-highlighted");
+    currentMobileTarget.classList.add("no-hover");
     currentMobileTarget = null;
-  });
+  }
 });

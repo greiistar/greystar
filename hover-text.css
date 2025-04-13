@@ -29,7 +29,8 @@
       .six-hover { --hover-color: rgb(136, 255, 0); }
 
       /* VAR APPLIED TO TEXT*/
-      .highlight-on-hover:hover,
+      /*.highlight-on-hover:hover,*/
+      .highlight-on-hover.desktop-highlighted,
       .highlight-on-hover.mobile-highlighted {
       color: var(--hover-color);
       text-shadow: 0 0 8px var(--hover-color);
