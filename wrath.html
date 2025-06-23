@@ -20,11 +20,27 @@
       font-family: GraublauWeb;
       src: url("path/GraublauWeb.otf") format("opentype");
       */
+      @font-face {
+      font-family: 'UNDERTOWN';
+      src: url('fonts/UNDERTOWN.ttf') format('opentype');
+      }
+      @font-face {
+        font-family: 'FuturaStd-Bold';
+        src: url("FuturaStd-Bold.otf") format("opentype");
+      }
+      
+      @font-face {
+      font-family: 'HindsHall2024ColumbiaUniversitypro-Palestiniancampusoccupation-Regular';
+      src: url('fonts/HindsHall2024ColumbiaUniversitypro-Palestiniancampusoccupation-Regular.otf') format('opentype');
+      }
+  
+
       :root {
         --backgroundSize: 1000px;
       }
       html,body { height:100%; }
       body {
+        
         /*padding-top: 20px;*/
         /*background-color: black;*/
        
@@ -56,12 +72,7 @@
             background-repeat: repeat;
             animation: movingBackground .25s linear infinite;
         }
-      @font-face {
-        font-family: FuturaStd-Bold;
-        src: url("FuturaStd-Bold.otf") format("opentype");
-        font-family: FuturaStd-Light;
-        src: url("FuturaStd-Light.otf") format("opentype");
-      }
+     
       /* Dotted border */
       hr.dotted {
         border-top: 5px dashed #363636;
@@ -126,21 +137,22 @@
     
 /*chat gpt shit, might look cool?*/
 
-  body {
-    margin: 0;
-    padding: 0;
-    }
+        body {
+          margin: 0;
+          padding: 0;
+          }
 
-    .image-text-wrap {
-  position: relative;
-  width: 100vw;
-  min-height: 60vh;
-  overflow: hidden;
-  display: flex;
-  align-items: left;
+          .image-text-wrap {
+        position: relative;
+        width: 100vw;
+        min-height: 60vh;
+        overflow: hidden;
+        display: flex;
+        align-items: left;
+        font-family: 'HindsHall2024ColumbiaUniversitypro-Palestiniancampusoccupation-Regular', sans-serif;
 
-}
- 
+      }
+      
     .bg-image {
       position: absolute;
       top: 0; left: 0;
@@ -175,14 +187,14 @@
       overflow-wrap: normal;
     }
 
-    @media (max-width: 768px) {
+    
       .wrath-title {
         display: block;       /* make it a block element */
         text-align: center;   /* center text */
         width: 100%;          /* full width */
         font-size: clamp(2em, 12vw, 4rem);
       }
-    }
+    
       
     </style>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -211,7 +223,7 @@
         <!--<img src="images/grey_logo_glow1.png" width="400vh" height="400vh" draggable="false">-->
       </div>
 
-    <main id="mainFadeIn" class="w3-container w3-content w3-center mainFadeIn" style="background:rgba(0, 0, 0, 0.0); padding-top: 20px;">
+    <main id="mainFadeIn" class="w3-container w3-content w3-center mainFadeIn" style="background:rgba(0, 0, 0, 0.0); padding-top: 0px;">
     
     <!--<div class="center">
         <img src="spincomp4.gif" alt="my_logo" width="25%" height="25%" />
@@ -221,7 +233,7 @@
         <img class="bg-image" src="images/WRATH_drawn_Transparent_darkRed_blur.png" alt="wrath image">
         <div class="blend-text">
   
-          <b class="wrath-title" style="color:red">WRATH</b><br/>
+          <b class="wrath-title" style="color:red; ">WRATH</b>
           <a class="highlight-on-hover wra3-hover" href="https://greystar.bandcamp.com/album/wrath">→BANDCAMP</a>
           <a class="highlight-on-hover wra4-hover" href="https://open.spotify.com/album/0NsSa6gcSsmVY3Jm3Uag49">→SPOTIFY</a>
           <a class="highlight-on-hover wra5-hover" href="https://www.youtube.com/watch?v=ubz3EI9_Aek">→YOUTUBE</a>
