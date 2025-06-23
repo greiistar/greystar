@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SPJS4L8WXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SPJS4L8WXH');
+</script>
+    <link rel="icon" href="gif1/1.png" type="image/png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>blog post 3</title>
+    <style>
+      /*@font-face {
+      font-family: GraublauWeb;
+      src: url("path/GraublauWeb.otf") format("opentype");
+      */
+      :root {
+        --backgroundSize: 1000px;
+      }
+      body {
+        /*padding-top: 20px;*/
+        /*background-color: black;*/
+       
+        color: white;
+        background-size: var(--backgroundSize);
+        background-image: url("images/clouds_1_grid1200x_indexed.png");
+        background-repeat: repeat;
+        animation: movingBackground 50s linear infinite;
+      }
+        @keyframes movingBackground {
+        from { background-position: 0 0;}
+        to {background-position: 0 var(--backgroundSize);}
+        }   
+
+        .body2,
+        .body3,
+        .body4 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0; /* send to back */
+     
+        }
+        .content {
+        position: relative;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.5);
+        padding-top: 20px;
+        }
+
+        .body2{
+            background-size: var(--backgroundSize);
+            background-image: url("images/rain_4blue_grid1200x_indexed-bright20.png");
+            background-repeat: repeat;
+            animation: movingBackground .7s linear infinite;
+        }
+        .body3{
+            background-size: var(--backgroundSize);
+            background-image: url("images/rain_4blue_grid1200x_indexed-bright40.png");
+            background-repeat: repeat;
+            animation: movingBackground .85s linear infinite;
+        }
+        .body4{
+            background-size: var(--backgroundSize);
+            background-image: url("images/rain_4blue_grid1200x_indexed-bright30.png");
+            background-repeat: repeat;
+            animation: movingBackground .25s linear infinite;
+        }
+
+      @font-face {
+        font-family: FuturaStd-Bold;
+        src: url("FuturaStd-Bold.otf") format("opentype");
+        font-family: FuturaStd-Light;
+        src: url("FuturaStd-Light.otf") format("opentype");
+      }
+      /* Dotted border */
+      hr.dotted {
+        border-top: 5px dashed #363636;
+      }
+      h2 {
+      }
+      /*a {
+        font-family: FuturaStd-Light;
+        font-size: 22px;
+      }*/
+      .center {
+        display: flex;
+        justify-content: center;
+      }
+      .social-links {
+        font-size: 250%;
+      }
+
+      hr.fancy {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #aaa, transparent);
+      margin: 20px 0;
+      }
+
+    </style>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="hover-text.css"
+    />
+  </head>
+  <body>
+    <div class="body2">
+    <div class="body3">
+    <div class="body4">
+
+    <main class="w3-container w3-content content w3-center" style="background:rgba(0, 0, 0, 0.0); padding-top: 0px;">
+    
+    <!--<div class="center">
+        <img src="spincomp4.gif" alt="my_logo" width="25%" height="25%" />
+      </div>-->
+      <a
+        class="social-links highlight-on-hover back-hover"
+        href="directory.html"
+        >back to directory</a
+      ><br />
+      <hr>
+
+      <p><b style="color:#ffffff">wip. right now this is just a nice rain room. field recording i did from 2017/2018?</b></p>
+    
+  
+
+
+     
+      
+
+
+    </main>
+
+    </div>
+    </div>
+    </div>
+
+  <!-- Pass the audio file name via a data attribute -->
+  <script id="music-config" data-track="sound/DR0000_0040_rain.mp3"></script>
+
+  <!-- Link the reusable music player -->
+  <script src="musicPlayer.js"></script>
+
+  <script src="hover-text.js"></script>
+
+</body>
+</html>
