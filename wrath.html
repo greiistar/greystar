@@ -92,6 +92,54 @@
       }
     }
 
+    
+/*chat gpt shit, might look cool?*/
+
+  body {
+    margin: 0;
+    padding: 0;
+    }
+
+    .image-text-wrap {
+  position: relative;
+  width: 100vw;
+  min-height: 60vh;
+  overflow: hidden;
+  display: flex;
+  align-items: left;
+
+}
+ 
+    .bg-image {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      z-index: 1;
+      pointer-events: none
+    }
+
+    .blend-text {
+      position: relative; /* relative instead of absolute to avoid stretching issues */
+      z-index: 2;
+      font-size: clamp(1.5rem, 5vw, 4rem);
+      font-weight: 600;
+      color: white;
+      mix-blend-mode: difference;
+
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      gap: 0.5rem; /* space between lines */
+
+      text-align: left;
+      padding: 1rem;
+      max-width: 90vw;
+      word-break: normal;
+      overflow-wrap: normal;
+    }
+      
     </style>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link
@@ -120,14 +168,17 @@
         href="directory.html"
         >back to directory</a
       ><br />
-      <h1><b style="color:red">WRATH</b></h1>
-      <p>
-        <a class="highlight-on-hover one-hover" href="https://greystar.bandcamp.com/album/wrath">BANDCAMP</a><br/>
-        <a class="highlight-on-hover one-hover" href="https://open.spotify.com/album/0NsSa6gcSsmVY3Jm3Uag49">SPOTIFY</a><br/>
-        <a class="highlight-on-hover one-hover" href="https://www.youtube.com/watch?v=ubz3EI9_Aek">YOUTUBE</a><br/>
-        <a class="highlight-on-hover one-hover" href="https://soundcloud.com/greystarmusic/sets/wrath">SOUNDCLOUD</a><br/>
-      </p>
-      <img class="responsive" src="images/WRATH_drawn_Transparent.png" alt="wrath image">
+      <div class="image-text-wrap">
+        <img class="bg-image" src="images/WRATH_drawn_Transparent.png" alt="wrath image">
+        <div class="blend-text">
+          <b style="color:red">WRATH</b><br/>
+          <a class="highlight-on-hover one-hover" href="https://greystar.bandcamp.com/album/wrath">→BANDCAMP</a>
+          <a class="highlight-on-hover one-hover" href="https://open.spotify.com/album/0NsSa6gcSsmVY3Jm3Uag49">→SPOTIFY</a>
+          <a class="highlight-on-hover one-hover" href="https://www.youtube.com/watch?v=ubz3EI9_Aek">→YOUTUBE</a>
+          <a class="highlight-on-hover one-hover" href="https://soundcloud.com/greystarmusic/sets/wrath">→SOUNDCLOUD</a>
+        </div>
+    </div>
+      
       <p><i>Released March 1st, 2025 on Reactionary Records</i></p>
   
     <hr class="fancy">
