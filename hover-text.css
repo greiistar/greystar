@@ -21,12 +21,21 @@
       .guestbook-hover { --hover-color: yellow; }
       .back-hover { --hover-color: cyan; }
       .reg-hover { --hover-color: rgb(105, 182, 255); }
+      .wra1-hover { --hover-color:rgb(113, 16, 16); }
+      .wra2-hover { --hover-color:rgb(93, 30, 30); }
+      .wra3-hover { --hover-color:rgb(86, 11, 11); }
+      .wra4-hover { --hover-color:rgb(80, 18, 18); }
+      .wra5-hover { --hover-color:rgb(74, 31, 31); }
       .one-hover { --hover-color: rgb(255, 0, 0); }
       .two-hover { --hover-color: rgb(255, 0, 191); }
       .thr-hover { --hover-color: rgb(140, 0, 255); }
       .fou-hover { --hover-color: rgb(0, 110, 255); }
       .fiv-hover { --hover-color: rgb(0, 255, 136); }
       .six-hover { --hover-color: rgb(136, 255, 0); }
+      .wrath1-hover { --hover-color: rgb(255, 0, 0); }
+      .wrath2-hover { --hover-color: rgb(255, 0, 0); }
+      .wrath3-hover { --hover-color: rgb(255, 0, 0); }
+      .wrath4-hover { --hover-color: rgb(255, 0, 0);}
 
       /* VAR APPLIED TO TEXT*/
       /*.highlight-on-hover:hover,*/

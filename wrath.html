@@ -32,7 +32,7 @@
         background-size: var(--backgroundSize);
         background-image: url("images/clouds_4_grid1200x_indexed.png");
         background-repeat: repeat;
-        animation: movingBackground 150s linear infinite;
+        animation: movingBackground 50s linear infinite;
       }
         @keyframes movingBackground {
         from { background-position: 0 0;}
@@ -46,9 +46,15 @@
         }
         .body3{
             background-size: var(--backgroundSize);
-            background-image: url("images/rain_3_grid1200x_indexed.png");
+            background-image: url("images/rain_3_grid1200x_indexed-bright40.png");
             background-repeat: repeat;
-            animation: movingBackground 1.15s linear infinite;
+            animation: movingBackground .85s linear infinite;
+        }
+        .body4{
+            background-size: var(--backgroundSize);
+            background-image: url("images/rain_3_grid1200x_indexed-bright20.png");
+            background-repeat: repeat;
+            animation: movingBackground .25s linear infinite;
         }
       @font-face {
         font-family: FuturaStd-Bold;
@@ -148,23 +154,7 @@
   
     }
 
-    /* glow layer */
-    .bg-image-glow {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('images/WRATH_drawn_Transparent.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      filter: blur(15px) brightness(1.5);
-      opacity: 0.6;
-      z-index: 0;
-      pointer-events: none;
-    }
-
+  
     .blend-text {
       position: relative; /* relative instead of absolute to avoid stretching issues */
       z-index: 2;
@@ -212,11 +202,12 @@
   <body>
     <div class="body2" style="height: 100%">
     <div class="body3" style="height: 100%">
+    <div class="body4" style="height: 100%">
       <div id="cover">
         <p style="margin-top:10cap">
-          <h1 class="highlight-on-hover wrath-hover">click to listen</h1><br/>
+          <h1 class="highlight-on-hover wrath1-hover" style="color:#363636">click to listen</h1><br/>
         </p>
-        <img src="images/wrath_bat_1.png" width="400vh" draggable="false"><br/>
+        <img src="images/wrath_bat_2.png" width="400vh" draggable="false"><br/>
         <!--<img src="images/grey_logo_glow1.png" width="400vh" height="400vh" draggable="false">-->
       </div>
 
@@ -226,19 +217,19 @@
         <img src="spincomp4.gif" alt="my_logo" width="25%" height="25%" />
       </div>-->
       <a
-        class="highlight-on-hover wrath-hover"
+        class="highlight-on-hover wra2-hover"
         href="directory.html"
-      /  >back to directory</a
+        >back to directory</a
       ><br />
       <div class="image-text-wrap">
         <img class="bg-image" src="images/WRATH_drawn_Transparent_partial.png" alt="wrath image">
         <div class="blend-text">
-          <div class="bg-image-glow"></div>
+  
           <b class="wrath-title" style="color:red">WRATH</b><br/>
-          <a class="highlight-on-hover wrath-hover" href="https://greystar.bandcamp.com/album/wrath">→BANDCAMP</a>
-          <a class="highlight-on-hover wrath-hover" href="https://open.spotify.com/album/0NsSa6gcSsmVY3Jm3Uag49">→SPOTIFY</a>
-          <a class="highlight-on-hover wrath-hover" href="https://www.youtube.com/watch?v=ubz3EI9_Aek">→YOUTUBE</a>
-          <a class="highlight-on-hover wrath-hover" href="https://soundcloud.com/greystarmusic/sets/wrath">→SOUNDCLOUD</a>
+          <a class="highlight-on-hover wra3-hover" href="https://greystar.bandcamp.com/album/wrath">→BANDCAMP</a>
+          <a class="highlight-on-hover wra4-hover" href="https://open.spotify.com/album/0NsSa6gcSsmVY3Jm3Uag49">→SPOTIFY</a>
+          <a class="highlight-on-hover wra5-hover" href="https://www.youtube.com/watch?v=ubz3EI9_Aek">→YOUTUBE</a>
+          <a class="highlight-on-hover wra3-hover" href="https://soundcloud.com/greystarmusic/sets/wrath">→SOUNDCLOUD</a>
         </div>
     </div>
       
@@ -247,13 +238,13 @@
     <hr class="fancy">
 
             <footer>   
-            <a class="highlight-on-hover wrath-hover" href="http://users.smartgb.com/g/g.php?a=s&i=g19-01188-b4">sign my guest book</a>
+            <a class="highlight-on-hover wra1-hover" href="http://users.smartgb.com/g/g.php?a=s&i=g19-01188-b4">sign my guest book</a>
              </footer>
              <br/>
     </main>
     </div>
     </div>
-
+    </div>
 
     <script>
       // after all html is loaded
@@ -273,7 +264,7 @@
       this.style.opacity = "0";
       setTimeout(() => {
       this.style.display = "none";
-      }, 4000);
+      }, 100);
       bgm.play();  
       });
       });

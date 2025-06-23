@@ -1,6 +1,11 @@
 // OPTIONAL: Class-based sound map (only if you prefer using class names)
 const soundMap = {
   "one-hover": ["sound/one-hover.mp3"],
+  "wra1-hover": ["sound/wrath1-hover-slo.mp3"],
+  "wra2-hover": ["sound/wrath2-hover-slo.mp3"],
+  "wra3-hover": ["sound/wrath3-hover.mp3"],
+  "wra4-hover": ["sound/wrath4-hover.mp3"],
+  "wra5-hover": ["sound/wrath5-hover.mp3"],
   "two-hover": ["sound/two-hover.mp3"],
   "thr-hover": ["sound/thr-hover.mp3"],
   "fou-hover": ["sound/fou-hover.mp3"],
@@ -9,7 +14,10 @@ const soundMap = {
   "reg-hover": ["sound/reg-hover.mp3"],
   "guestbook-hover": ["sound/guestbook-hover.mp3"],
   "back-hover": ["sound/back-hover.mp3"],
-  "wrath-hover:": ["sound/wrath-hover.mp3"]
+  "one1-hover:": ["sound/wrath1-hover.mp3"],
+  "one2-hover:": ["sound/wrath2-hover.mp3"],
+  "one3-hover:": ["sound/wrath3-hover.mp3"],
+  "one4-hover:": ["sound/wrath4-hover.mp3"],
 };
 
 const hoverTargets = document.querySelectorAll(".highlight-on-hover");
