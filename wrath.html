@@ -30,7 +30,7 @@
        
         color: white;
         background-size: var(--backgroundSize);
-        background-image: url("images/dots_2_grid1200x_v2_DIM.png");
+        background-image: url("images/clouds_4_grid1200x_indexed.png");
         background-repeat: repeat;
         animation: movingBackground 150s linear infinite;
       }
@@ -40,15 +40,15 @@
         }   
         .body2{
             background-size: var(--backgroundSize);
-            background-image: url("images/dots_1_grid1200x_v2.png");
+            background-image: url("images/rain_3_grid1200x_indexed.png");
             background-repeat: repeat;
-            animation: movingBackground 50s linear infinite;
+            animation: movingBackground .7s linear infinite;
         }
         .body3{
             background-size: var(--backgroundSize);
-            background-image: url("images/dots_1_grid1200x_v2.png");
+            background-image: url("images/rain_3_grid1200x_indexed.png");
             background-repeat: repeat;
-            animation: movingBackground 80s linear infinite;
+            animation: movingBackground 1.15s linear infinite;
         }
       @font-face {
         font-family: FuturaStd-Bold;
@@ -60,8 +60,7 @@
       hr.dotted {
         border-top: 5px dashed #363636;
       }
-      h2 {
-      }
+
       /*a {
         font-family: FuturaStd-Light;
         font-size: 22px;
@@ -73,6 +72,32 @@
       .social-links {
         font-size: 250%;
       }
+
+      #cover {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 413;
+      background-color:rgba(0, 0, 0, 0.5);
+      text-align: center;
+      opacity: 1;
+      transition: opacity .5s;
+      transition-timing-function: ease-in-out;
+      transition-delay: 0s;
+      user-select: none;
+      }
+
+    .mainFadeIn {
+    opacity: 0;
+    transition: opacity 2s ease;
+    padding: 2rem;
+    }
+
+    .mainFadeIn.visible {
+      opacity: 1;
+    }
 
     hr.fancy {
     border: none;
@@ -187,25 +212,33 @@
   <body>
     <div class="body2" style="height: 100%">
     <div class="body3" style="height: 100%">
-    <main class="w3-container w3-content w3-center" style="background:rgba(0, 0, 0, 0.0); padding-top: 20px;">
+      <div id="cover">
+        <p style="margin-top:10cap">
+          <h1 class="highlight-on-hover wrath-hover">click to listen</h1><br/>
+        </p>
+        <img src="images/wrath_bat_1.png" width="400vh" draggable="false"><br/>
+        <!--<img src="images/grey_logo_glow1.png" width="400vh" height="400vh" draggable="false">-->
+      </div>
+
+    <main id="mainFadeIn" class="w3-container w3-content w3-center mainFadeIn" style="background:rgba(0, 0, 0, 0.0); padding-top: 20px;">
     
     <!--<div class="center">
         <img src="spincomp4.gif" alt="my_logo" width="25%" height="25%" />
       </div>-->
       <a
-        class="highlight-on-hover back-hover"
+        class="highlight-on-hover wrath-hover"
         href="directory.html"
-        >back to directory</a
+      /  >back to directory</a
       ><br />
       <div class="image-text-wrap">
-        <img class="bg-image" src="images/WRATH_drawn_Transparent.png" alt="wrath image">
+        <img class="bg-image" src="images/WRATH_drawn_Transparent_partial.png" alt="wrath image">
         <div class="blend-text">
           <div class="bg-image-glow"></div>
           <b class="wrath-title" style="color:red">WRATH</b><br/>
-          <a class="highlight-on-hover one-hover" href="https://greystar.bandcamp.com/album/wrath">→BANDCAMP</a>
-          <a class="highlight-on-hover one-hover" href="https://open.spotify.com/album/0NsSa6gcSsmVY3Jm3Uag49">→SPOTIFY</a>
-          <a class="highlight-on-hover one-hover" href="https://www.youtube.com/watch?v=ubz3EI9_Aek">→YOUTUBE</a>
-          <a class="highlight-on-hover one-hover" href="https://soundcloud.com/greystarmusic/sets/wrath">→SOUNDCLOUD</a>
+          <a class="highlight-on-hover wrath-hover" href="https://greystar.bandcamp.com/album/wrath">→BANDCAMP</a>
+          <a class="highlight-on-hover wrath-hover" href="https://open.spotify.com/album/0NsSa6gcSsmVY3Jm3Uag49">→SPOTIFY</a>
+          <a class="highlight-on-hover wrath-hover" href="https://www.youtube.com/watch?v=ubz3EI9_Aek">→YOUTUBE</a>
+          <a class="highlight-on-hover wrath-hover" href="https://soundcloud.com/greystarmusic/sets/wrath">→SOUNDCLOUD</a>
         </div>
     </div>
       
@@ -214,7 +247,7 @@
     <hr class="fancy">
 
             <footer>   
-            <a class="highlight-on-hover guestbook-hover" href="http://users.smartgb.com/g/g.php?a=s&i=g19-01188-b4">sign my guest book</a>
+            <a class="highlight-on-hover wrath-hover" href="http://users.smartgb.com/g/g.php?a=s&i=g19-01188-b4">sign my guest book</a>
              </footer>
              <br/>
     </main>
@@ -226,13 +259,17 @@
       // after all html is loaded
       document.addEventListener("DOMContentLoaded", () => {
       // preload track
-      const bgm = new Audio("sound/ph6_atlantis[spaced_out_v1_edit_4db].mp3");
+      const bgm = new Audio("sound/wrath-ambience.mp3");
       bgm.autoplay = true;
       bgm.loop = true;
       bgm.load();
-    
+
+      //on click fadein body
+      const mainFadeIn = document.getElementById("mainFadeIn");
+      
       // warning click
       document.getElementById("cover").addEventListener("click", function() {
+      mainFadeIn.classList.add("visible"); 
       this.style.opacity = "0";
       setTimeout(() => {
       this.style.display = "none";
@@ -241,7 +278,7 @@
       });
       });
     </script>
-
+ 
   <script src="hover-text.js"></script>
 
 </body>

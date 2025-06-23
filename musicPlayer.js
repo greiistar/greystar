@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Get the track path from the <script> tag
   const scriptTag = document.getElementById("music-config");
+  const main = document.getElementById("mainFadeIn");
   const trackPath = scriptTag?.dataset.track;
 
   if (!trackPath) {
@@ -23,4 +24,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1300);
     bgm.play();
   });
+  mainFadeIn.classList.add("visible"); 
 });

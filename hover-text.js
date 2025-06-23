@@ -8,7 +8,8 @@ const soundMap = {
   "six-hover": ["sound/six-hover.mp3"],
   "reg-hover": ["sound/reg-hover.mp3"],
   "guestbook-hover": ["sound/guestbook-hover.mp3"],
-  "back-hover": ["sound/back-hover.mp3"]
+  "back-hover": ["sound/back-hover.mp3"],
+  "wrath-hover:": ["sound/wrath-hover.mp3"]
 };
 
 const hoverTargets = document.querySelectorAll(".highlight-on-hover");
